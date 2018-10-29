@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac5d737a7a21064bb30f46fa8afb5c6, type: 3}
+  m_Name: DefaultSkin
+  m_EditorClassIdentifier: 
+  m_SkinName: Default Blue
+  m_IsAnimated: 0
+  m_ButtonUp: {fileID: 21300040, guid: 3a2bc598df6864146915ca65550f529d, type: 3}
+  m_ButtonPressed: {fileID: 21300024, guid: 3a2bc598df6864146915ca65550f529d, type: 3}
+  m_ButtonHighLight: {fileID: 21300024, guid: 3a2bc598df6864146915ca65550f529d, type: 3}
+  m_ButtonClear: {fileID: 0}
+  m_Flagged: {fileID: 21300022, guid: 3a2bc598df6864146915ca65550f529d, type: 3}
+  m_Question: {fileID: 21300042, guid: 3a2bc598df6864146915ca65550f529d, type: 3}
+  m_ButtonUpAnim: {fileID: 0}
+  m_ButtonPressedAnim: {fileID: 0}
+  m_ButtonHighLightAnim: {fileID: 0}
+  m_ButtonClearAnim: {fileID: 0}
+  m_FlaggedAnim: {fileID: 0}
+  m_QuestionAnim: {fileID: 0}
+  m_BorderEdgeHorizontal: {fileID: 1760015920456790, guid: 6fb7c9c7dc6f8934c95eeb5e91236dab,
+    type: 2}
+  m_BorderEdgeVertical: {fileID: 1843552589909026, guid: e347332729c8f22429ccf2829f202d03,
+    type: 2}
+  m_BorderEdgeCorner: {fileID: 1182280819674566, guid: 9b9c63d2f7504c74fbaf684f2e1cb7c4,
+    type: 2}
+  m_BoardTiles:
+  - {fileID: 1070439505486374, guid: 523c8bec4248ae2479bb5e6f9c5557a1, type: 2}
+  - {fileID: 1894568548289652, guid: 222bc978f4f7b1443b32a097777d5a21, type: 2}
+  - {fileID: 1420087450208522, guid: cb07508b3be53c844997197c5d105d43, type: 2}
+  - {fileID: 1060781695685934, guid: d34edfc739f9447418157d2031301288, type: 2}
+  - {fileID: 1479791121468486, guid: 6dd6d975d12da4646b236c3a27151b23, type: 2}
+  - {fileID: 1589195370180884, guid: 02921fa32591f6145aa4ac2a7d7c4b77, type: 2}
+  - {fileID: 1540831858657650, guid: 0667f515fd023d74c88aa0f6bd635d91, type: 2}
+  - {fileID: 1981621231504678, guid: 6190df5fc1bf3824a8f5ee9c5eea1fd4, type: 2}
+  - {fileID: 1533671841295720, guid: f520e216a52c955498e1e5de8f6bfdd0, type: 2}
+  - {fileID: 1128093195019724, guid: 3afdc29ef1e0bf6499b9b7d041c27763, type: 2}
+  m_WrongTile: {fileID: 1386470172339482, guid: f0512435255ff5344916a4d09c0fda3c,
+    type: 2}
