@@ -105,11 +105,13 @@ public class ClassicGameManager : LevelManager {
             case GAMESTATE.WON:
                 m_GameBoard.Reveal(99, new Vector3(0,0));
                 SetState(GAMESTATE.GAMEOVER);
+                m_GameTimer.GetComponent<GameTimer>().setIsPlaying(false);
                 break;
             case GAMESTATE.LOSE:
                 m_GameBoard.Deactivate();
                 m_GameBoard.Reveal(-99, new Vector3(0, 0));
                 SetState(GAMESTATE.GAMEOVER);
+                m_GameTimer.GetComponent<GameTimer>().setIsPlaying(false);
                 break;
                 default:
                 break;

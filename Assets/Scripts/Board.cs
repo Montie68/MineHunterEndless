@@ -124,6 +124,7 @@ public class Board : PlayArea {
                 clone.transform.SetParent(this.transform);
                 clone.GetComponent<SpriteRenderer>().sortingOrder = 5;
                 clone.transform.localPosition = position;
+                clone.transform.localScale = new Vector3(1, 1, 1);
 
             }
         }
