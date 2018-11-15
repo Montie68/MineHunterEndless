@@ -55,7 +55,7 @@ public class TileButton : MonoBehaviour
 
             m_SpriteRender.sprite = m_SkinData.m_ButtonPressed;
             ClearButton();
-            StopCoroutine("CheckForLongPress");
+            StopCoroutine(CheckForLongPress());
             m_oneClick = false;
             m_timerhold = 0;
         }
@@ -96,25 +96,27 @@ public class TileButton : MonoBehaviour
             }
             
         }
-       /*   if (Input.GetButtonUp("Fire1") && !m_oneClick)
-          {
-              m_oneClick = true;
-          }
-          else if (Input.GetButtonUp("Fire2") && !m_HoldClick)
-          {
-              m_HoldClick = true;
-          }
-          */
+#if UNITY_EDITOR
+        else  if (Input.GetMouseButtonDown(0))
+        {
+            m_oneClick = true;
+        }
+        else if (Input.GetMouseButtonDown(1))
+        {
+            m_HoldClick = true;
+        }
+#endif
+
     }
     
     private IEnumerator CheckForLongPress()
     {
-        if (Input.GetTouch(0).phase == TouchPhase.Began)
+        if (Input.GetTouch(0).phase == TouchPhase.Began )
         { // If the user puts her finger on screen...
 
             m_timerhold = 0;
         }
-        else if (Input.GetTouch(0).phase == TouchPhase.Stationary)
+        else if (Input.GetTouch(0).phase == TouchPhase.Stationary )
         {
             m_timerhold += Time.deltaTime*5;
             m_slider.value = m_timerhold;
@@ -129,9 +131,32 @@ public class TileButton : MonoBehaviour
             }
             else m_oneClick = true;
         }
-        else yield return null;
+        yield return null;
     }
+    /*
+#if UNITY_EDITOR
 
+    private IEnumerator CheckForLongClick()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            m_timerhold += Time.deltaTime * 5;
+            m_slider.value = m_timerhold;
+        }
+        else if (Input.GetMouseButtonUp(0))
+        { // If the user raises her finger from screen
+            m_slider.value = 0;
+
+            if (m_timerhold > m_HoldTime)
+            { // Is the time pressed greater than our time delay threshold?
+                m_HoldClick = true;
+            }
+            else m_oneClick = true;
+        }
+        yield return null;
+    }
+#endif
+*/
     private void CleanUp()
     {
         Destroy(this);
