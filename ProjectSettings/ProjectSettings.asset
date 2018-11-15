@@ -640,6 +640,7 @@ PlayerSettings:
   webGLLinkerTarget: 1
   scriptingDefineSymbols:
     1: dUI_DoozyUI;dUI_UseOrientationManager
+    4: dUI_DoozyUI
   platformArchitecture: {}
   scriptingBackend: {}
   il2cppCompilerConfiguration: {}
@@ -722,7 +723,7 @@ PlayerSettings:
     Hub: 0
     UNet: 1
   facebookSdkVersion: 7.9.4
-  apiCompatibilityLevel: 2
+  apiCompatibilityLevel: 3
   cloudProjectId: cc419391-71ac-4668-8e0c-80e28092ed32
   projectName: MineHunter
   organizationId: drop-bear-games-design
