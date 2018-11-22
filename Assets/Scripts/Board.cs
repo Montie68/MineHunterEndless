@@ -216,7 +216,7 @@ public class Board : PlayArea {
     // Update is called once per frame
     void Update () {
 
-        if (m_Buttons.Count <= m_GameManger.m_Mines)
+        if (m_Buttons.Count <= m_GameManger.m_Mines && m_GameManger.GetState() == GAMESTATE.PLAYING)
         {
             m_GameManger.SetState(GAMESTATE.WON);
         }
@@ -269,5 +269,18 @@ public class Board : PlayArea {
     public override List<MineTile> GetPlayArea() { return m_Board; }
     public override LevelManager GetGameManager() { return m_GameManger; }
 
-
+    public void NewGame()
+    {
+        // clear the game board and
+        // destroy the gameobjects that are part of the game.
+        foreach (Transform tf in GetComponentsInChildren<Transform>())
+        {
+            Destroy(tf);
+        }
+        m_Board = m_GameManger.m_Board;
+        BuildBoard();
+        PlaceButtons();
+        ScaleBoardToScreen();
+        // load new gamebord based on user options
+    }
 }

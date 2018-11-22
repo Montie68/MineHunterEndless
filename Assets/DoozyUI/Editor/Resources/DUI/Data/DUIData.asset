@@ -59,10 +59,10 @@ MonoBehaviour:
         m_Target: 1
         speed: 2
         m_Value: 1
-    - categoryName: Main
+    - categoryName: Menu
       itemNames:
-      - Results
-      - Search
+      - Main
+      - Options
       isExpanded:
         m_Target: 1
         speed: 2
@@ -90,7 +90,7 @@ MonoBehaviour:
     - Example 3 - Buttons
     - Example 4 - Simple UI
     - Game UI
-    - Main
+    - Menu
     - MyCategory
     - Uncategorized
   DatabaseUIButtons:

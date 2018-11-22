@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-
 public class ClassicGameManager : LevelManager {
     [Header("BoardDimesions")]
     public int m_BoardWidth = 8;
@@ -12,6 +11,11 @@ public class ClassicGameManager : LevelManager {
     private ClassicGameManager m_GameManager;
     [Header("Game Timer")]
     public GameObject m_GameTimer;
+    [Header("Game Sizes")]
+    [SerializeField]
+    public List<GameSizes> m_GameSizes;
+    [SerializeField]
+    public List<Difficulty> m_Difficulty;
 
     void Awake()
     {
@@ -23,15 +27,30 @@ public class ClassicGameManager : LevelManager {
         else
             Destroy(gameObject);
 
+        if (GamePrefs.Difficulty != -1)
+        {
+            m_MineDesity = m_Difficulty[GamePrefs.Difficulty].DifficultyRatio;
+        }
+        if (GamePrefs.Size != -1)
+        {
+            m_BoardHieght = m_GameSizes[GamePrefs.Size].Height;
+            m_BoardWidth = m_GameSizes[GamePrefs.Size].Width;
+        }
+
     }
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
+        NewBoard();
 
+        return;
+    }
+
+    private void NewBoard()
+    {
         if (seed == 0) seed = Random.Range(int.MinValue, int.MaxValue);
         Random.InitState(seed);
         CreateBoard();
-
-        return;
     }
 
     public override void CreateBoard()
@@ -95,7 +114,7 @@ public class ClassicGameManager : LevelManager {
     }
     public void NewGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     // Update is called once per frame
@@ -118,4 +137,9 @@ public class ClassicGameManager : LevelManager {
 
         }
 	}
+
+    internal GAMESTATE GetState()
+    {
+        return m_GameState;
+    }
 }

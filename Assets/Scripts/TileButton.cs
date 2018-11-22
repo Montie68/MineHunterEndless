@@ -30,7 +30,7 @@ public class TileButton : MonoBehaviour
     private bool m_oneClick = false;
     private bool m_HoldClick = false;
     private GameTimer m_gameTimer;
-
+    private Touch m_Touch;
     private Slider m_slider;
 
     // Use this for initialization
@@ -88,7 +88,7 @@ public class TileButton : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if (Input.touchCount > 0)
+        if (Input.touchCount > 0 && Input.touchCount < 2)
         {
             if (!m_oneClick && !m_HoldClick)
             {
@@ -118,7 +118,7 @@ public class TileButton : MonoBehaviour
         }
         else if (Input.GetTouch(0).phase == TouchPhase.Stationary )
         {
-            m_timerhold += Time.deltaTime*5;
+            m_timerhold += Input.GetTouch(0).deltaTime*5;
             m_slider.value = m_timerhold;
         }
         if (Input.GetTouch(0).phase == TouchPhase.Ended)
