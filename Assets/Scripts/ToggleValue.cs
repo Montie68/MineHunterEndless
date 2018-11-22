@@ -15,11 +15,9 @@ public class ToggleValue : MonoBehaviour {
     public bool Size;
 
     public List<toggleValues> toggleVal;
-    ToggleGroup tgroup;
 
     void Start()
     {
-        tgroup = GetComponent<ToggleGroup>();
     }
 
     void ChangeDiff(toggleValues tog)
