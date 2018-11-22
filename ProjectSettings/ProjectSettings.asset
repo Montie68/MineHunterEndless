@@ -745,6 +745,7 @@ PlayerSettings:
     1: dUI_DoozyUI;dUI_UseOrientationManager
     4: dUI_DoozyUI;dUI_UseOrientationManager;dUI_TextMeshPro
     7: dUI_DoozyUI;dUI_UseOrientationManager;dUI_TextMeshPro
+    13: dUI_DoozyUI
   platformArchitecture: {}
   scriptingBackend: {}
   il2cppCompilerConfiguration: {}
