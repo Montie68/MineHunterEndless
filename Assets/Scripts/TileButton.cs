@@ -111,27 +111,31 @@ public class TileButton : MonoBehaviour
     
     private IEnumerator CheckForLongPress()
     {
-        if (Input.GetTouch(0).phase == TouchPhase.Began )
-        { // If the user puts her finger on screen...
-
-            m_timerhold = 0;
-        }
-        else if (Input.GetTouch(0).phase == TouchPhase.Stationary )
+        if (Input.touchCount > 0)
         {
-            m_timerhold += Input.GetTouch(0).deltaTime*5;
-            m_slider.value = m_timerhold;
-        }
-        if (Input.GetTouch(0).phase == TouchPhase.Ended)
-        { // If the user raises her finger from screen
-            m_slider.value = 0;
+            Touch theTouch = Input.GetTouch(0);
+            if (theTouch.phase == TouchPhase.Began)
+            { // If the user puts her finger on screen...
 
-            if (m_timerhold > m_HoldTime)
-            { // Is the time pressed greater than our time delay threshold?
-                m_HoldClick = true;
+                m_timerhold = 0;
             }
-            else m_oneClick = true;
+            else if (theTouch.phase == TouchPhase.Stationary)
+            {
+                m_timerhold += Input.GetTouch(0).deltaTime * 5;
+                m_slider.value = m_timerhold;
+            }
+            if (theTouch.phase == TouchPhase.Ended)
+            { // If the user raises her finger from screen
+                m_slider.value = 0;
+
+                if (m_timerhold > m_HoldTime)
+                { // Is the time pressed greater than our time delay threshold?
+                    m_HoldClick = true;
+                }
+                else m_oneClick = true;
+            }
+            yield return null;
         }
-        yield return null;
     }
     /*
 #if UNITY_EDITOR

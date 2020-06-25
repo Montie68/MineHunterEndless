@@ -28,11 +28,14 @@ public class GameTimer : MonoBehaviour {
     void FixedUpdate () {
 
             if (!m_IsPlaying) return;
+        if (Application.isFocused == true)
+        {
             m_Time += Time.fixedDeltaTime;
 
             m_minutes = Mathf.Floor(m_Time / 60);
             m_seconds = m_Time % 60;
             if (m_seconds > 59) m_seconds = 0;
+        }
 
     }
 
