@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public static class GamePrefs {
 
     private static int difficulty, size;

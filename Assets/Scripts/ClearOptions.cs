@@ -6,8 +6,8 @@ public class ClearOptions : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        GamePrefs.Difficulty = -1;
-        GamePrefs.Size = -1;
+        GamePrefs.Difficulty = 0;
+        GamePrefs.Size = 0;
 	}
 
 }
