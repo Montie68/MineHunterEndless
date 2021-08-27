@@ -22,6 +22,10 @@ public class ToggleValue : MonoBehaviour
     void Start()
     {
         orientation = UIManager.Instance.currentOrientation;
+        foreach(toggleValues tog in toggleVal)
+        {
+            tog.toggle.onValueChanged.AddListener( delegate { ChangeValue(tog.value); });
+        }
     }
 
     public void ChangeDiff(toggleValues tog)
@@ -44,12 +48,17 @@ public class ToggleValue : MonoBehaviour
             {
                 if (i == GamePrefs.Difficulty)
                     toggleVal[i].toggle.isOn = true;
+                else
+                    toggleVal[i].toggle.isOn = false;
             }
             else if (Size)
             {
                 if (i == GamePrefs.Size)
                     toggleVal[i].toggle.isOn = true;
+                else
+                    toggleVal[i].toggle.isOn = false;
             }
+            
 
         }
 
@@ -64,14 +73,20 @@ public class ToggleValue : MonoBehaviour
         }
     }
 
-    public void changeToggleValue()
+    public void ChangeValue(int val)
     {
-        foreach (toggleValues tog in toggleVal)
+        for (int i = 0; i < toggleVal.Count; i++)
         {
-            if (tog.toggle.isOn)
+
+            if (Difficulty)
             {
-                if (Difficulty) ChangeDiff(tog);
-                else if (Size) ChangeSize(tog);
+                if (i == val)
+                    ChangeDiff(toggleVal[i]);
+            }
+            else if (Size)
+            {
+                if (i == val)
+                    ChangeSize(toggleVal[i]);
             }
 
         }
