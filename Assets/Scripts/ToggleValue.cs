@@ -24,12 +24,12 @@ public class ToggleValue : MonoBehaviour
         orientation = UIManager.Instance.currentOrientation;
     }
 
-    void ChangeDiff(toggleValues tog)
+    public void ChangeDiff(toggleValues tog)
     {
-
+        Debug.LogError("change diff");
         GamePrefs.Difficulty = tog.value;
     }
-    void ChangeSize(toggleValues tog)
+    public void ChangeSize(toggleValues tog)
     {
         GamePrefs.Size = tog.value;
 
@@ -62,6 +62,10 @@ public class ToggleValue : MonoBehaviour
             SwitchOrientaion();
             orientation = UIManager.Instance.currentOrientation;
         }
+    }
+
+    public void changeToggleValue()
+    {
         foreach (toggleValues tog in toggleVal)
         {
             if (tog.toggle.isOn)
@@ -69,9 +73,8 @@ public class ToggleValue : MonoBehaviour
                 if (Difficulty) ChangeDiff(tog);
                 else if (Size) ChangeSize(tog);
             }
+
         }
-
-
     }
 }
 

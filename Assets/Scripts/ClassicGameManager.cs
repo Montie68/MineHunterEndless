@@ -17,6 +17,8 @@ public class ClassicGameManager : LevelManager {
     [SerializeField]
     public List<Difficulty> m_Difficulty;
 
+    [Header("Game Debug")]
+    public int m_Debug = 99;
     void Awake()
     {
         if (!m_GameManager)
@@ -26,7 +28,11 @@ public class ClassicGameManager : LevelManager {
         }
         else
             Destroy(gameObject);
-
+        if (m_Debug != 99)
+        {
+            GamePrefs.Difficulty = m_Debug;
+            GamePrefs.Size = m_Debug;
+        }
         if (GamePrefs.Difficulty != -1)
         {
             m_MineDesity = m_Difficulty[GamePrefs.Difficulty].DifficultyRatio;
@@ -143,3 +149,4 @@ public class ClassicGameManager : LevelManager {
         return m_GameState;
     }
 }
+

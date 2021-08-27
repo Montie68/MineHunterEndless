@@ -469,10 +469,10 @@ MonoBehaviour:
   m_Mines: 0
   m_MineDesity: 5
   m_GameBoard: {fileID: 927984521}
-  seed: 0
+  seed: 15
   Skin: {fileID: 11400000, guid: 4e1afccffe0a3d7438bb94392560fb88, type: 2}
-  m_BoardWidth: 12
-  m_BoardHieght: 12
+  m_BoardWidth: 9
+  m_BoardHieght: 9
   m_GameTimer: {fileID: 1222198827}
   m_GameSizes:
   - Width: 8
@@ -485,6 +485,7 @@ MonoBehaviour:
   - DifficultyRatio: 8
   - DifficultyRatio: 6.4
   - DifficultyRatio: 5
+  m_Debug: -1
 --- !u!4 &227084338
 Transform:
   m_ObjectHideFlags: 0

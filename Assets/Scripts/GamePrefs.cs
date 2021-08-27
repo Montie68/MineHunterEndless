@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class GamePrefs {
-
-    private static int difficulty, size;
-
+public static class GamePrefs 
+{
+    public static int difficulty, size;
+   
     public static int Difficulty
     {
         get
